@@ -2,8 +2,10 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("https://wallpapers.com/images/featured/rick-and-morty-cool-t3ynu5ly9m7jq6e2.jpg");
   background-size: cover;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
+  
 
 }
 header{
@@ -45,6 +47,12 @@ main{
   margin-top: 2rem;
   border-top: 1px solid #ccc;
   padding: 1rem;
+  
+}
+
+#character-info h2,
+#character-info p {
+  color: #fff;
 }
 
 #fetch-character{
@@ -56,3 +64,15 @@ main{
   cursor: pointer;
 }
 
+#meeseeks-pop-up{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #007bff;
+  padding: 1rem;
+  border-radius: 4px;
+  z-index: 9999;
+}
