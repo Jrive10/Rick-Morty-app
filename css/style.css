@@ -1,37 +1,36 @@
-body{
+body {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("https://wallpapers.com/images/featured/rick-and-morty-cool-t3ynu5ly9m7jq6e2.jpg");
   background-size: cover;
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-  
-
 }
-header{
+
+header {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 1rem;
 }
 
-main{
+main {
   padding: 2rem;
   text-align: center;
 }
 
-#user-module{
+#user-module {
   margin-bottom: 1rem;
 }
 
-#meeseeks-box{
+#meeseeks-box {
   position: relative;
   display: flex;
   align-items: center;
   margin-top: 1rem;
 }
 
-#character-name{
+#character-name {
   padding: 0.5rem;
   margin-right: 1rem;
   border: 1px solid #ccc;
@@ -39,15 +38,69 @@ main{
   font-size: 16px;
 }
 
-#meeseeks-box img{
+#search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  background: #e6e6e6;
+  border-radius: 5px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-#character-info{
+#search-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 123, 255, 0.3);
+  opacity: 0;
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+#search-button.clicked {
+  animation: blowUp 5s ease-in-out;
+}
+
+@keyframes blowUp {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2.5);
+  }
+}
+
+.meeseeks-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("https://cdn6.aptoide.com/imgs/8/a/2/8a24b572f8423c1cb97f2899f754871f_icon.png");
+  background-size: cover;
+}
+
+#character-info {
   margin-top: 2rem;
   border-top: 1px solid #ccc;
   padding: 1rem;
-  
 }
 
 #character-info h2,
@@ -55,24 +108,34 @@ main{
   color: #fff;
 }
 
-#fetch-character{
-  padding: 1rem 2rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+header, #user-module{
+  opacity: 0;
+  animation: fade 1s forwards;
 }
 
-#meeseeks-pop-up{
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 2px solid #007bff;
-  padding: 1rem;
-  border-radius: 4px;
-  z-index: 9999;
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+
+main{
+  background-image: url("https://wallpapers.com/images/featured/rick-and-morty-cool-t3ynu5ly9m7jq6e2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#search-button.clicked{
+  animation: bounce 1s;
+}
+
+@keyframes bounce{
+  0%, 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
 }

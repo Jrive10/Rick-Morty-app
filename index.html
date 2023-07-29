@@ -6,13 +6,36 @@
   <title>Rick and Morty Characters: Meeseeks Portal </title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background-image: url("https://wallpapers.com/images/featured/rick-and-morty-cool-t3ynu5ly9m7jq6e2.jpg"); 
+    header, #user-module{
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn{
+      to{
+        opacity: 1;
+      }
+    }
+
+    main{
+      background-image: url("https://wallpapers.com/images/featured/rick-and-morty-cool-t3ynu5ly9m7jq6e2.jpg");
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
+    }
+
+    #search-button.clicked{
+      animation: bounce 1s;
+    }
+
+    @keyframes bounce{
+      0%, 100%{
+        transform: translateY(0);
+      }
+      50%{
+        transform: translateY(-20px);
+      }
     }
   </style>
 </head>
@@ -22,10 +45,12 @@
   </header>
   <main>
     <div id="user-module">
-     <div id="meeseeks-box">
-      <input type="text" id="character-name" placeholder="Enter character name">
-      <img src="https://thumbs.gfycat.com/SociableActiveHornshark-size_restricted.gif" alt="Meeseeks Box" onclick="searchCharacter()">
-    </div>
+      <div id="meeseeks-box">
+        <input type="text" id="character-name" placeholder="Enter character name">
+        <button id="search-button">
+          <div class="meeseeks-image"></div>
+        </button>
+      </div>
     </div>
     <div id="character-info">
       
@@ -35,6 +60,5 @@
 
   </div>
   <script type="text/javascript" src="js/app.js"></script>
-  
 </body>
 </html>
