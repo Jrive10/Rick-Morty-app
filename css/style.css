@@ -13,3 +13,46 @@ header{
   padding: 1rem;
 }
 
+main{
+  padding: 2rem;
+  text-align: center;
+}
+
+#user-module{
+  margin-bottom: 1rem;
+}
+
+#meeseeks-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#character-name{
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#meeseeks-box img{
+  cursor: pointer;
+}
+
+#character-info{
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+}
+
+#fetch-character{
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
